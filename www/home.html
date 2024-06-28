@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>MeditateApp - Home</title>
+
+    <style>
+        body {
+            font-family: Monaco, 'Lucida Console', monospace;
+            background: url('img/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;  
+        }
+        .page {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+            background-color: #68c7c1;
+            border-radius: 15px;
+            background:rgba(255, 255, 255,0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 70px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            flex: 1 0 45%; /* 1 row 2 cards */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px; 
+            position: relative;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            color: #68c7c1;
+        }
+
+        .navbar {
+            position: fixed;
+            bottom: 20px;
+            width: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 5px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            margin: 0 20px;
+            padding: 5px ;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar button:hover, .navbar button:focus {
+            background-color: #f9a822;
+            color: white;
+        }
+
+        .navbar button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome-page" class="page">
+        <h1>Welcome, <span id="user-name">User</span>.</h1>
+        <p>How do you feel today?</p>
+        <div class="card-container">
+            <div class="card" onclick="location.href='timer.html'">
+                <i class="fas fa-spa card-icon"></i>
+                <br>
+                <p>RELAXING</p>
+            </div>
+            <div class="card" onclick="location.href='timer.html'">
+                <i class="fas fa-brain card-icon"></i>
+                <br>
+                <p>REFLECTING</p>
+            </div>
+            <div class="card" onclick="location.href='timer.html'">
+                <i class="fas fa-bed card-icon"></i>
+                <br>
+                <p>IMPROVE SLEEP</p>
+            </div>
+            <div class="card" onclick="location.href='timer.html'">
+                <i class="fas fa-smile card-icon"></i>
+                <br>
+                <p>IMPROVE MOOD</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <button onclick="location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button onclick="location.href='timer.html'">
+            <i class="fas fa-clock"></i>
+        </button>
+        <button onclick="location.href='profile.html'">
+            <i class="fas fa-user"></i>
+        </button>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

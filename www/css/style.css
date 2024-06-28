@@ -1,0 +1,71 @@
+body {
+    font-family: Monaco, 'Lucida Console', monospace;
+    background: url('img/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.page {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    background-color: #68c7c1;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 70px;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: #87cefa;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group button:hover {
+    background-color: #00bfff;
+    transform: translateY(-3px);
+}
+
+p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+p a {
+    color: #333;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

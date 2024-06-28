@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>MeditateApp - Profile</title>
+
+    <style>
+        body {
+            font-family: Monaco, 'Lucida Console', monospace;
+            background: url('img/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full screen height */
+            color: #333;
+        }
+
+        .page {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+            background-color: #68c7c1;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 70px;
+            /* Updated height to be auto and added max-height for smaller size */
+            height: auto;
+            max-height: 80vh; /* Adjust max-height as per your design */
+            overflow-y: auto; /* Add scroll if content exceeds max-height */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px; /* Adjusted font size */
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #87cefa;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; /* Adjusted font size */
+        }
+
+        .form-group button:hover {
+            background-color: #00bfff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px; /* Adjusted font size */
+        }
+
+        .task-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .progress {
+            background-color: #ddd;
+            border-radius: 13px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #68c7c1;
+            width: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            bottom: 20px;
+            width: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 5px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            margin: 0 20px;
+            padding: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar button:hover, .navbar button:focus {
+            background-color: #f9a822;
+            color: white;
+        }
+
+        .navbar button:focus {
+            outline: none;
+        }
+
+        .save-button {
+            background-color: #87cefa;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .save-button:hover {
+            background-color: #00bfff;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div id="profile-page" class="page">
+        <div class="form-group">
+            <label>Daily Tasks:</label>
+            <div class="task-list">
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task1">
+                    <label for="task1">Morning Meditation (5-10 minutes)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task2">
+                    <label for="task2">Gratitude Journal (write 3 things you are grateful for)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task3">
+                    <label for="task3">Exercise (at least 20 minutes)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task4">
+                    <label for="task4">Healthy Breakfast</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task5">
+                    <label for="task5">Mindful Breathing (take a 5-minute breathing break)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task6">
+                    <label for="task6">Read (at least 10 pages of a book)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task7">
+                    <label for="task7">Hydrate (drink 8 glasses of water)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task8">
+                    <label for="task8">Evening Reflection (reflect on the day's achievements)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task9">
+                    <label for="task9">Connect with Nature (spend 10 minutes outside)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task10">
+                    <label for="task10">Digital Detox (1 hour without screens)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task11">
+                    <label for="task11">Acts of Kindness (perform a kind act)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task12">
+                    <label for="task12">Learning (spend 20 minutes learning something new)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task13">
+                    <label for="task13">Sleep Hygiene (no screens 1 hour before bed)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task14">
+                    <label for="task14">Journal (write down thoughts and feelings)</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" id="task15">
+                    <label for="task15">Stretching (perform a 10-minute stretching routine)</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Monthly Progress:</label>
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <button onclick="location.href='home.html'">
+            <i class="fas fa-home"></i>
+        </button>
+        <button onclick="location.href='timer.html'">
+            <i class="fas fa-clock"></i>
+        </button>
+        <button onclick="location.href='profile.html'">
+            <i class="fas fa-user"></i>
+        </button>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
